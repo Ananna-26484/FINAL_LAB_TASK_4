@@ -24,12 +24,12 @@
 				<tr>
 					<td>Username</td>
 					<td><input type="text" id="username" name="username" onkeyup="remover()" onblur="blurmsg()"></td>
-					<td id="Msg"> </td>
+					<td id="nameMsg"> </td>
 				</tr>
 				<tr>
 					<td>Email</td>
-					<td><input type="text" id="email" name="email" onkeyup="remover()" onblur="blurmsg()"></td>
-					<td id="Msg"> </td>
+					<td><input type="email" id="email" name="email" onkeyup="remover()" onblur="blurmsg()"></td>
+					<td id="emailMsg"> </td>
 				</tr>
 				<tr>
 					<td>Password</td>
@@ -50,16 +50,17 @@
 			document.getElementsByTagName('a')[0].style.display = 'inline';
 		}
 		function remover(){
-			document.getElementById('Msg').innerHTML = "";
+			document.getElementById('nameMsg').innerHTML = "";
+			document.getElementById('emailMsg').innerHTML = "";
 		}
 
 		function blurmsg(){
 
 			if(document.getElementById('email').value == ""){
-				document.getElementById('Msg').innerHTML = "* this field is required!";
+				document.getElementById('emailMsg').innerHTML = "* this field is required!";
 			}
 			else if(document.getElementById('username').value == ""){
-				document.getElementById('Msg').innerHTML = "* this field is required!";
+				document.getElementById('nameMsg').innerHTML = "* this field is required!";
 			}
 		}
 	</script>
