@@ -5,10 +5,8 @@
 		if($_GET['error'] == 'db_error'){
 			echo "Something went wrong...please try again";
 		}
-		
-	}
 
-	
+	}
 
 ?>
 
@@ -25,7 +23,7 @@
 			<table>
 				<tr>
 					<td>Username</td>
-					<td><input type="text" name="username"></td>
+					<td><input type="text" id="username" name="username" onkeyup="remover()" onblur="blurmsg()"></td>
 					<td id="Msg"> </td>
 				</tr>
 				<tr>
@@ -52,13 +50,16 @@
 			document.getElementsByTagName('a')[0].style.display = 'inline';
 		}
 		function remover(){
-			document.getElementById('emailMsg').innerHTML = "";
+			document.getElementById('Msg').innerHTML = "";
 		}
 
 		function blurmsg(){
 
 			if(document.getElementById('email').value == ""){
-				document.getElementById('emailMsg').innerHTML = "* this field is required!";
+				document.getElementById('Msg').innerHTML = "* this field is required!";
+			}
+			else if(document.getElementById('username').value == ""){
+				document.getElementById('Msg').innerHTML = "* this field is required!";
 			}
 		}
 	</script>
